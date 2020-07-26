@@ -31,7 +31,7 @@ int main() {
     Dollar* dol7 = new Dollar(2,10,"Dollar", "Cent");
     
     LinkedList* list = new LinkedList();
-    
+
     printf("====== LINKED LIST =======\n");
     list->addDataEnd(dol1);
     list->printList();
@@ -52,33 +52,33 @@ int main() {
     printf("Dol3 is at index %d\n", ind3);
     // exhibit function of findData for finding Dollar in index
     cout << "The dollar at index 5 is " << *(list->findData(5)) << endl;
-    
+
     // deleteData functionality
     list->deleteData(3);
     list->printList();
-    
+
     // isListEmpty() functionality
     printf("Is list empty? %s\n", list->isListEmpty() ? "true" : "false");
+    // testing destroyList() and isListEmpty()
     list->destroyList();
-    
     printf("Is list empty? %s\n", list->isListEmpty() ? "true" : "false");
-    
-    
-    
+
     printf("====== END LINKED LIST =======\n");
-    
-    
-    
+
+    // TESTING STACK STARTS NOW
     printf("====== STACK =======\n");
     
+    
+    
     printf("====== END STACK =======\n");
-    
-    
-    
+
+
+    // TESTING QUEUE STARTS NOW
     printf("====== QUEUE =======\n");
-    
+
     printf("====== END QUEUE =======\n");
-                       
+
+    
     
     
 }

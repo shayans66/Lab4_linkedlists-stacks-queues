@@ -56,15 +56,16 @@ public:
         if(isListEmpty())
             return;
         
-        LinkNode* temp = start->next;
-
-        // for each node, delete it. but store a temporary node such that we can delete the
-        // current node but still have a path to the next node
-        for(LinkNode* node = start; node != NULL; temp = temp->next ){
+        LinkNode* cur = start;
+        LinkNode* ahead = start->next;
+        
+        while( cur != NULL){
             
-            delete node;
-
-            node = temp;
+            delete cur;
+            cur = cur->next;
+            if(cur == NULL)
+                break;
+            ahead = ahead->next;
         }
     
     }
@@ -109,18 +110,29 @@ public:
         count++;
     }
     // delete node at a given position (index) in linkedlist
+    // assuming index exists
     void deleteData(int index){
+        // if array is only 1 long
+        if(count == 1){
+            start = NULL;
+            end  = NULL;
+        }
         int cur = 0;
         LinkNode* current = start;
-        while(cur != index ){
+        while(cur != index-1){
             current = current->next;
             cur++;
         }
         // Node current is now pointing to node BEFORE the one specified by paramter "index"
-        end = current;
-        delete current->next;
-        // update count
-        count--;
+        LinkNode* deleteMe = current->next;
+        current->next = current->next->next;
+        delete deleteMe;
+        
+        
+//        end = current->next;
+//        delete current->next;
+//        // update count
+//        count--;
 
     }
     // returns dollar in node with given index, overloaded with other 'findData' method
@@ -153,19 +165,28 @@ public:
     void destroyList(){
         if(isListEmpty())
             return;
-        LinkNode* temp = start->next;
+//        LinkNode* temp = start->next;
+//
+//        // for each node, delete it. but store a temporary node such that we can delete the
+//        // current node but still have a path to the next node
+//        for(LinkNode* node = start; node != NULL; temp = temp->next ){
+//
+//            delete node;
+//
+//            node = temp;
+//        }
+        LinkNode* cur = start;
+        LinkNode* ahead = start->next;
         
-        // for each node, delete it. but store a temporary node such that we can delete the
-        // current node but still have a path to the next node
-        for(LinkNode* node = start; node != NULL; temp = temp->next ){
-
-            delete node;
-
-            node = temp;
+        while( cur != NULL){
+            
+            delete cur;
+            cur = cur->next;
+            if(cur == NULL)
+                break;
+            ahead = ahead->next;
         }
-       
-        
-        
+
         start = end = NULL;
         count = 0;
     }
