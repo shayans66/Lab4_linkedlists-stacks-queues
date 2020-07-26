@@ -68,7 +68,7 @@ int main() {
     // TESTING STACK STARTS NOW
     printf("====== STACK =======\n");
     
-    
+    Stack* stack = new Stack();
     
     printf("====== END STACK =======\n");
 

@@ -12,6 +12,7 @@
 // but user cannot use LinkedList class methods on a stack object in main
 class Stack : private LinkedList {
     // inherits Constructor and Destructor from Linked List
+public:
     Stack() : LinkedList(){}
     ~Stack(){}
     
@@ -42,6 +43,7 @@ class Stack : private LinkedList {
 // Queue inherits from Linklist. It can use methods in linkedlist within Queue class,
 // but user cannot use LinkedList class methods on a queue object in main
 class Queue : private LinkedList{
+public:
     // inherits Constructor and Destructor from Linked List
     Queue() : LinkedList(){}
     ~Queue(){}
