@@ -155,8 +155,8 @@ public:
             return;
         LinkNode* temp = start->next;
         
-         for each node, delete it. but store a temporary node such that we can delete the
-         current node but still have a path to the next node
+        // for each node, delete it. but store a temporary node such that we can delete the
+        // current node but still have a path to the next node
         for(LinkNode* node = start; node != NULL; temp = temp->next ){
 
             delete node;
