@@ -65,19 +65,85 @@ int main() {
 
     printf("====== END LINKED LIST =======\n");
 
+    // #############################################################################
+    
     // TESTING STACK STARTS NOW
     printf("====== STACK =======\n");
-    
+    // pushStack and printStack functionality
     Stack* stack = new Stack();
+    stack->push(dol1);
+    stack->printStack();
+    stack->push(dol3);
+    stack->printStack();
+    stack->push(dol5);
+    stack->printStack();
+    stack->push(dol7);
+    stack->printStack();
+    stack->push(dol2);
+    stack->printStack();
+    stack->push(dol4);
+    stack->printStack();
+    stack->push(dol6);
+    stack->printStack();
+    // pop functionality
+    stack->pop();
+    stack->pop();
+    stack->printStack();
+    // peek() functionality
+    cout << "The front (top) of the stack is: " << *(stack->peek()) << endl;
+    // destroyStack() functionality
+    stack->destroyStack();
+    printf("Emptied stack.\n");
+    // isStackEmpty() functionality
+    printf("Is stack empty? %s\n", stack->isStackEmpty() ? "true" : "false");
     
     printf("====== END STACK =======\n");
 
-
+    // #############################################################################
+    
     // TESTING QUEUE STARTS NOW
     printf("====== QUEUE =======\n");
+    Queue* queue = new Queue();
 
+    // enqueue() and printQueue() functionality
+    queue->enqueue(dol5);
+    queue->printQueue();
+    queue->enqueue(dol1);
+    queue->printQueue();
+    queue->enqueue(dol4);
+    queue->printQueue();
+    queue->enqueue(dol6);
+    queue->printQueue();
+    queue->enqueue(dol3);
+    queue->printQueue();
+    queue->enqueue(dol7);
+    queue->printQueue();
+    queue->enqueue(dol2);
+    queue->printQueue();
+    // dequeue() functionality
+    queue->dequeue();
+    queue->dequeue();
+    queue->printQueue();
+    // peekFront() functionality
+    cout << "The front (beginning) of the queue is " << *queue->peekFront() << endl;
+    // peekRear() functionality
+    cout << "The rear (end) of the queue is " << *queue->peekRear() << endl;
+    // destroyStack() functionality
+    queue->destroyQueue();
+    printf("Emptied queue.\n");
+    // isStackEmpty() functionality
+    printf("Is queue empty? %s\n", queue->isQueueEmpty() ? "true" : "false");
+    
+    
+    
     printf("====== END QUEUE =======\n");
 
+    // #############################################################################
+    
+    // Memory freeing
+    delete list;
+    delete stack;
+    delete queue;
     
     
     

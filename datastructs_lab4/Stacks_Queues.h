@@ -37,6 +37,14 @@ public:
     void destroyStack(){
         destroyList();
     }
+    // prints stack
+    void printStack(){
+        printList();
+    }
+    // returns if stack is empty or not
+    bool isStackEmpty(){
+        return isListEmpty();
+    }
 
     
 };
@@ -70,6 +78,15 @@ public:
         destroyList();
     }
     
+    // prints queue
+    void printQueue(){
+        printList();
+    }
+
+    // returns if queue is empty or not
+    bool isQueueEmpty(){
+        return isListEmpty();
+    }
 
 
 };

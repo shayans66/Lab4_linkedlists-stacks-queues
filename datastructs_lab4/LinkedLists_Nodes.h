@@ -44,11 +44,7 @@ public:
         end = NULL;
         count = 0;
     }
-    void createNewList(){
-        start = NULL;
-        end = NULL;
-        count = 0;
-    }
+    
     
     // destructor: start at beggining node, and loop through all the nodes, deleting them
     // it needs to be `virtual` so the sub-classes can inherit it
@@ -127,12 +123,8 @@ public:
         LinkNode* deleteMe = current->next;
         current->next = current->next->next;
         delete deleteMe;
+        count--;
         
-        
-//        end = current->next;
-//        delete current->next;
-//        // update count
-//        count--;
 
     }
     // returns dollar in node with given index, overloaded with other 'findData' method
